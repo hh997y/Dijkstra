@@ -1,15 +1,15 @@
 def dijkstra(graph):
     l = len(graph)
-    visit = [i for i in range(6)]
-    current = visit[0]
-    path = {}
-    res = {}
+    visit = [i for i in range(6)]  # 未遍历点
+    current = visit[0]  # 当前遍历点
+    path = {}  # 最短路径
+    res = {}  # 最短距离
     # 0到各个点的初始值
     for i in range(l):
         res[i] = graph[0][i]
         path[i] = '0->{}'.format(i)
     while visit:
-        dtmp = []
+        dtmp = []  # 每次遍历，把当前点到其它点的距离用一个列表按顺序储存起来
         for i in range(l):
             if current != i:
                 # 松弛操作
